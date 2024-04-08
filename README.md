@@ -34,6 +34,8 @@ public function up()
     });
 }
 ```
+> [!CAUTION]  
+> Make sure that the column has case-senstive collation. The case sensitivity of SQL depends on the collation settings of the database or individual columns. In many databases, the default collation is case-insensitive, meaning that string comparisons are not case-sensitive. Laxo Rank Algorithm requires case-sensitive collation. Try a collation ending in _bin depending on your character set. e.g. `$table->string('position')->collate('utf8mb4_bin')`
 
 
 Add `\AlexCrawford\Sortable\SortableTrait` to your Eloquent model.
